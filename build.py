@@ -483,7 +483,7 @@ def main():
     status = build(all_nodes, args.out, args.prefix, args.group,
                    args.test_url, args.interval, args.tolerance)
     status["files"] = [os.path.basename(f) for f in files]
-    with open(os.path.join(args.out, "status.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(args.out, "status.json"), "w", encoding="utf-8", newline="\n") as f:
         json.dump(status, f, ensure_ascii=False, indent=2)
 
     print(f"[OK] 共 {len(all_nodes)} 个节点 → {args.out}/"
