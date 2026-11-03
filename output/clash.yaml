@@ -1,5 +1,5 @@
-# 由 build.py 生成 — 2026-11-04 00:13:54
-# 节点数: 5
+# 由 build.py 生成 — 2026-11-04 00:37:40
+# 节点数: 16
 # 仅节点 + 自动测速组，规则只有 GEOIP,CN 直连 + 兜底走组
 mixed-port: 7890
 allow-lan: false
@@ -16,6 +16,17 @@ proxy-groups:
       - "TG-星链加速器684616s4.df6h451rh.xin"
       - "TG-坚果加速器er8u54dh.df6h451rh.xin"
       - "TG-黑洞加速器terutrrj.d6f54hd1j.cc"
+      - "TG-Japan-NG2 FREE"
+      - "TG-Japan-JND1 FREE"
+      - "TG-USA-D04 FREE"
+      - "TG-USA-JNG1 VIP"
+      - "TG-USA-JNGL1 VIP"
+      - "TG-USA-DENG1 VIP"
+      - "TG-HongKong-JNG1 VIP"
+      - "TG-HongKong-JNG2 VIP"
+      - "TG-SG-JNG2 VIP"
+      - "TG-DE-FRA-NG1 VIP"
+      - "TG-Japan-cw01 FREE"
     url: "https://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 50
@@ -73,6 +84,135 @@ proxies:
       path: "/"
       headers:
         Host: "terutrrj.d6f54hd1j.cc"
+  - name: "TG-Japan-NG2 FREE"
+    type: "vless"
+    server: "jpga01.xyy123.bid"
+    port: 443
+    uuid: "05453546-201f-4e8d-97ae-fd70da0e951f"
+    udp: true
+    tls: true
+    servername: "shop.business.amazon.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "AgTktefiMM58y7f-KFgEtmVti_YJbd0GPSkxNeJ0RH4"
+      short-id: "cfffc6b65acb2ad3"
+  - name: "TG-Japan-JND1 FREE"
+    type: "vless"
+    server: "japro02.xyy123.bid"
+    port: 443
+    uuid: "e4cd263b-c5c7-4410-bf61-8893179ec429"
+    udp: true
+    tls: true
+    servername: "shop.business.amazon.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "sDKrtAJk2VP_w1w7cFi2O86RdlvQ2E2An5xsRdJlgGE"
+      short-id: "1fc0cd"
+  - name: "TG-USA-D04 FREE"
+    type: "vless"
+    server: "jpga01.xyy123.bid"
+    port: 443
+    uuid: "05dd8b4c-c202-406a-a550-31c0b92ba312"
+    udp: true
+    tls: true
+    servername: "buckeye-retail-website.amazon.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "AgTktefiMM58y7f-KFgEtmVti_YJbd0GPSkxNeJ0RH4"
+      short-id: "56cd2f720d"
+  - name: "TG-USA-JNG1 VIP"
+    type: "vless"
+    server: "japro02.xyy123.bid"
+    port: 443
+    uuid: "ce7beb9a-5dc1-47b3-b3ff-94521430c446"
+    udp: true
+    tls: true
+    servername: "home.amazon.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "sDKrtAJk2VP_w1w7cFi2O86RdlvQ2E2An5xsRdJlgGE"
+      short-id: "6d962e8d8a0dce"
+  - name: "TG-USA-JNGL1 VIP"
+    type: "vless"
+    server: "jpga01.xyy123.bid"
+    port: 443
+    uuid: "e4f2601f-73a8-4f23-85ff-bd7721e1366c"
+    udp: true
+    tls: true
+    servername: "home.amazon.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "AgTktefiMM58y7f-KFgEtmVti_YJbd0GPSkxNeJ0RH4"
+      short-id: "bdaf"
+  - name: "TG-USA-DENG1 VIP"
+    type: "vless"
+    server: "defrnode.xyy123.bid"
+    port: 443
+    uuid: "3d7b3136-de73-4547-b29b-e439f2fc91c0"
+    udp: true
+    tls: true
+    servername: "mp3recs.amazon.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "XTarABsaaFbjYNk6lRKnUzGavHzeqMIP7B8dZGNCvkE"
+      short-id: "132fa975c199b269"
+  - name: "TG-HongKong-JNG1 VIP"
+    type: "vless"
+    server: "japro02.xyy123.bid"
+    port: 443
+    uuid: "23af32ca-bea1-4a5e-bebb-04d1b1b633bc"
+    udp: true
+    tls: true
+    servername: "p-nt-www-amazon-com-kalias.amazon.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "sDKrtAJk2VP_w1w7cFi2O86RdlvQ2E2An5xsRdJlgGE"
+      short-id: "6d962e8d8a0dce"
+  - name: "TG-HongKong-JNG2 VIP"
+    type: "vless"
+    server: "jpga01.xyy123.bid"
+    port: 443
+    uuid: "0d8bb1ce-a70f-43b7-abf6-37bf5c856eb2"
+    udp: true
+    tls: true
+    servername: "buckeye-retail-website.amazon.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "AgTktefiMM58y7f-KFgEtmVti_YJbd0GPSkxNeJ0RH4"
+      short-id: "bdaf"
+  - name: "TG-SG-JNG2 VIP"
+    type: "vless"
+    server: "japro02.xyy123.bid"
+    port: 443
+    uuid: "440f986b-9469-4d80-adf0-01ba37af73c5"
+    udp: true
+    tls: true
+    servername: "shop.business.amazon.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "sDKrtAJk2VP_w1w7cFi2O86RdlvQ2E2An5xsRdJlgGE"
+      short-id: "6d962e8d8a0dce"
+  - name: "TG-DE-FRA-NG1 VIP"
+    type: "vless"
+    server: "defrnode.xyy123.bid"
+    port: 443
+    uuid: "8af93649-403b-46d8-9966-923d4c58402c"
+    udp: true
+    tls: true
+    servername: "p-y3-www-amazon-com-kalias.amazon.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "XTarABsaaFbjYNk6lRKnUzGavHzeqMIP7B8dZGNCvkE"
+      short-id: "0fa4a0e2493392"
+  - name: "TG-Japan-cw01 FREE"
+    type: "vless"
+    server: "162.159.128.96"
+    port: 443
+    uuid: "d2116a1f-2773-4bf4-b6e2-5e7e2d09ae6e"
+    udp: true
+    tls: true
+    servername: "ws-japan-pro-02.jumpernode.site"
+    client-fingerprint: "chrome"
 rules:
   - "GEOIP,CN,DIRECT"
   - "MATCH,TG节点"
