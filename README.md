@@ -12,6 +12,8 @@ input/*.txt  →  build.py  →  output/loon.txt   （base64 通用订阅 → Lo
 
 ```
 .
+├── update.py               # 一键更新：生成 + 提交 + 推送 + 清缓存（日常就用它）
+├── update.bat              # Windows 双击入口，等于运行 update.py
 ├── build.py                # 转换脚本（纯标准库，零依赖）
 ├── input/                  # 放节点 txt（可放多个，自动合并去重）
 ├── output/
@@ -22,9 +24,41 @@ input/*.txt  →  build.py  →  output/loon.txt   （base64 通用订阅 → Lo
 └── README.md
 ```
 
-## 一、生成
+## 日常更新：一条命令
 
-把 txt 丢进 `input/`，然后：
+**把新的 txt 丢进 `input/`，然后运行 `update.py` 就行**，它会自动完成：生成 → 判断有没有变化 → 提交 → 推送 → 通知 jsDelivr 清缓存。
+
+```bash
+python update.py
+```
+
+Windows 上也可以直接双击 `update.bat`。
+
+它做的检查：
+
+| 情况 | 行为 |
+|---|---|
+| `input/` 里没有 txt | 直接报错退出，不动任何文件 |
+| 节点内容与上次完全一致 | 跳过提交，不产生空提交（`--force` 可强制） |
+| 生成失败（文件损坏等） | 中止，绝不推送半成品 |
+| 推送缺凭证 | 提示先手动 `git push` 登录一次，之后就能自动推 |
+| 推送成功 | 自动请求 `purge.jsdelivr.net` 清缓存，不必再手动加 `?v=` |
+
+参数：
+
+| 参数 | 说明 |
+|---|---|
+| `--latest` | 只用 `input/` 里最新的那个 txt，忽略更早的（避免旧节点越积越多） |
+| `--gen-only` | 只生成订阅文件，不碰 git |
+| `--no-push` | 生成并提交，但不推送 |
+| `--force` | 节点没变化也照常提交推送 |
+| `--prefix X` | 临时改节点名前缀（默认 `TG-`） |
+| `--include R` / `--exclude R` | 按名称正则只保留 / 剔除节点 |
+
+## 一、只生成（进阶）
+
+不想推送、只想看看生成结果时，直接用 `build.py`：
+
 
 ```bash
 # 默认读 input/ 目录
@@ -58,7 +92,7 @@ python build.py --input ./input --prefix TG- --exclude "过期|官网"
 
 同一份文件里重复的节点（同 `服务器:端口:凭证`）会自动去掉，多个文件之间也会去重。
 
-## 二、推送
+## 二、手动推送（不用 update.py 时）
 
 ```bash
 git add input output
@@ -66,8 +100,8 @@ git commit -m "chore: 更新节点"
 git push
 ```
 
-> `input/` 里的 txt 要不要一起提交由你决定。提交的话仓库会有两份相同信息；
-> 不提交就把 `input/` 加进 `.gitignore`，只保留 `output/`。
+> 首次 `git push` 会弹 GitHub 登录窗口，登录一次之后系统会记住凭证，
+> 之后 `update.py` 就能全自动推送了。
 
 ## 三、订阅地址
 
@@ -80,8 +114,9 @@ git push
 
 优先用 jsDelivr（国内可访问）。备选 `raw.githubusercontent.com/byour13/Proxy/main/output/loon.txt`，国内可能打不开。
 
-**缓存问题**：jsDelivr 对 `@main` 有约 12 小时缓存。更新后想立刻生效，在地址后加版本参数
-`?v=2`、`?v=3`（数字递增即可绕过缓存），客户端里改一次订阅地址就行。
+**缓存问题**：jsDelivr 对 `@main` 有约 12 小时缓存。`update.py` 推送成功后会主动调用
+`purge.jsdelivr.net` 清缓存，通常 1~2 分钟生效。如果没生效，再在地址后加版本参数
+`?v=2`、`?v=3`（数字递增即可绕过缓存）。
 
 ## 四、Loon 配置
 
