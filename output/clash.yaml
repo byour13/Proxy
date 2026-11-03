@@ -1,0 +1,78 @@
+# 由 build.py 生成 — 2026-11-03 23:43:31
+# 节点数: 5
+# 仅节点 + 自动测速组，规则只有 GEOIP,CN 直连 + 兜底走组
+mixed-port: 7890
+allow-lan: false
+bind-address: "*"
+mode: "rule"
+log-level: "info"
+ipv6: false
+proxy-groups:
+  - name: "TG节点"
+    type: "url-test"
+    proxies:
+      - "TG-星链加速器56481.df6h451rh.xin"
+      - "TG-星链加速器sdf65h46wr.df6h451rh.xin"
+      - "TG-星链加速器684616s4.df6h451rh.xin"
+      - "TG-坚果加速器er8u54dh.df6h451rh.xin"
+      - "TG-黑洞加速器terutrrj.d6f54hd1j.cc"
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+proxies:
+  - name: "TG-星链加速器56481.df6h451rh.xin"
+    type: "anytls"
+    server: "56481.df6h451rh.xin"
+    port: 443
+    password: "0324fbc29561"
+    sni: "images.ctfassets.net"
+    udp: true
+    client-fingerprint: "chrome"
+    skip-cert-verify: true
+  - name: "TG-星链加速器sdf65h46wr.df6h451rh.xin"
+    type: "anytls"
+    server: "sdf65h46wr.df6h451rh.xin"
+    port: 443
+    password: "0324fbc29561"
+    sni: "images.ctfassets.net"
+    udp: true
+    client-fingerprint: "chrome"
+    skip-cert-verify: true
+  - name: "TG-星链加速器684616s4.df6h451rh.xin"
+    type: "anytls"
+    server: "684616s4.df6h451rh.xin"
+    port: 443
+    password: "0324fbc29561"
+    sni: "px.ads.linkedin.com"
+    udp: true
+    client-fingerprint: "chrome"
+    skip-cert-verify: true
+  - name: "TG-坚果加速器er8u54dh.df6h451rh.xin"
+    type: "anytls"
+    server: "er8u54dh.df6h451rh.xin"
+    port: 443
+    password: "0324fbc29561"
+    sni: "px.ads.linkedin.com"
+    udp: true
+    client-fingerprint: "chrome"
+    skip-cert-verify: true
+  - name: "TG-黑洞加速器terutrrj.d6f54hd1j.cc"
+    type: "vmess"
+    server: "terutrrj.d6f54hd1j.cc"
+    port: 443
+    uuid: "a904e307-771f-498b-87ad-8e6e0d0ade4a"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "terutrrj.d6f54hd1j.cc"
+    skip-cert-verify: true
+    client-fingerprint: "chrome"
+    network: "ws"
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "terutrrj.d6f54hd1j.cc"
+rules:
+  - "GEOIP,CN,DIRECT"
+  - "MATCH,TG节点"

@@ -1,0 +1,14 @@
+{
+  "nodes": 5,
+  "updated_at": "2026-11-03 15:43:31 UTC",
+  "updated_ts": 1793720611,
+  "prefix": "TG-",
+  "group": "TG节点",
+  "by_type": {
+    "anytls": 4,
+    "vmess": 1
+  },
+  "files": [
+    "11.txt"
+  ]
+}
