@@ -71,14 +71,14 @@ git push
 
 ## 三、订阅地址
 
-假设仓库是 `用户名/nodes-sub`，分支 `main`：
+仓库地址：`https://github.com/byour13/Proxy`，分支 `main`。
 
 | 客户端 | 地址 |
 |---|---|
-| Loon | `https://cdn.jsdelivr.net/gh/用户名/nodes-sub@main/output/loon.txt` |
-| Clash Verge | `https://cdn.jsdelivr.net/gh/用户名/nodes-sub@main/output/clash.yaml` |
+| Loon | `https://cdn.jsdelivr.net/gh/byour13/Proxy@main/output/loon.txt` |
+| Clash Verge | `https://cdn.jsdelivr.net/gh/byour13/Proxy@main/output/clash.yaml` |
 
-优先用 jsDelivr（国内可访问）。备选 `raw.githubusercontent.com/用户名/nodes-sub/main/output/loon.txt`，国内可能打不开。
+优先用 jsDelivr（国内可访问）。备选 `raw.githubusercontent.com/byour13/Proxy/main/output/loon.txt`，国内可能打不开。
 
 **缓存问题**：jsDelivr 对 `@main` 有约 12 小时缓存。更新后想立刻生效，在地址后加版本参数
 `?v=2`、`?v=3`（数字递增即可绕过缓存），客户端里改一次订阅地址就行。
@@ -87,7 +87,7 @@ git push
 
 ```ini
 [Remote Proxy]
-TG = https://cdn.jsdelivr.net/gh/用户名/nodes-sub@main/output/loon.txt,enabled=true
+TG = https://cdn.jsdelivr.net/gh/byour13/Proxy@main/output/loon.txt,enabled=true
 
 [Proxy Group]
 TG节点 = url-test, node-filter = ^TG-, url = http://www.gstatic.com/generate_204, interval = 300, tolerance = 50
